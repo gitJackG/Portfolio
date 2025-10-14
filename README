@@ -1,0 +1,20 @@
+# Portfolio Website
+
+A modern, responsive portfolio website built with React, showcasing my projects, skills, and experience as a Computer Science graduate.
+
+## Built With
+
+- **React** - Frontend framework
+- **Sass/SCSS** - CSS preprocessor for styling
+- **jQuery** - For interactive elements and animations
+- **HTML5** - Markup
+- **CSS3** - Styling with modern features
+
+## Features
+
+- Responsive design that works on all devices
+- Smooth scrolling navigation
+- Interactive project showcases
+- Animated skill carousel in footer
+- PDF viewer integration for CV and references
+- Modern glass-morphism design elements

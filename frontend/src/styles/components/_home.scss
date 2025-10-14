@@ -1,0 +1,106 @@
+@import '../variables';
+
+.home-container {
+  font-family: $tech-font;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  
+  background: linear-gradient(135deg, $dark-bg 0%, #2c3e50 100%);
+  color: $dark-text;
+  
+  h1, h2, h3, p {
+    color: $dark-text;
+  }
+  
+  .title {
+    color: $dark-accent;
+  }
+  
+  .description {
+    color: $dark-secondary;
+  }
+}
+
+.content {
+  max-width: 600px;
+  transition: transform 0.1s ease-out;
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all $transition-fast;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    @media (max-width: $mobile) {
+      font-size: 2rem;
+      min-height: 40px;
+    }
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: all $transition-fast;
+    
+    @media (max-width: $mobile) {
+      font-size: 1.2rem;
+    }
+  }
+  
+  .description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    margin-bottom: 3rem;
+    
+    @media (max-width: $mobile) {
+      font-size: 1rem;
+    }
+  }
+}
+
+// Social Icons Styles
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  
+  @media (max-width: $mobile) {
+    gap: 1.5rem;
+  }
+}
+
+.social-icon {
+  color: $dark-accent;
+  transition: all $transition-fast;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: $radius-md;
+  
+  &:hover {
+    color: lighten($dark-accent, 15%);
+    background: rgba($dark-accent, 0.1);
+    transform: scale(1.2);
+  }
+  
+  svg {
+    filter: $shadow-light;
+  }
+}
