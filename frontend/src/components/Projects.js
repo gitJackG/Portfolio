@@ -76,8 +76,7 @@ const Projects = () => {
               </div>
               
               <p className="project-brief">
-                A full-stack web application for analyzing CS2 skin patterns with real-time processing 
-                and advanced pattern recognition algorithms.
+                A full-stack web application for analyzing video game skin patterns.
               </p>
               
               <div className="project-tech-stack">
