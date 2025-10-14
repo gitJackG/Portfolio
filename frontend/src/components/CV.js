@@ -45,7 +45,6 @@ const CV = () => {
           <h2>Curriculum Vitae & References</h2>
           
           <div className="cv-layout">
-            {/* Main PDF Viewer */}
             <div className="cv-main">
               <div className="cv-card">
                 <div className="cv-header">
@@ -72,7 +71,6 @@ const CV = () => {
               </div>
             </div>
 
-            {/* Side Documents */}
             <div className="cv-sidebar">
               <div className="documents-section">
                 <h3>Other Documents</h3>

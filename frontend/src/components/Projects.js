@@ -9,22 +9,15 @@ const Projects = () => {
     const loraCard = document.querySelector('.project-card-lora');
     
     const expandBoth = (e) => {
-      // Don't trigger if clicking on a link
       if (e.target.closest('.project-link')) {
         return;
       }
-      
-      console.log('Card clicked - expanding both');
-      
-      // Check if both are already expanded
       const bothExpanded = cs2Card.classList.contains('expanded') && loraCard.classList.contains('expanded');
       
       if (bothExpanded) {
-        // Collapse both
         cs2Card.classList.remove('expanded');
         loraCard.classList.remove('expanded');
       } else {
-        // Expand both
         cs2Card.classList.add('expanded');
         loraCard.classList.add('expanded');
       }
@@ -37,8 +30,7 @@ const Projects = () => {
     if (loraCard) {
       loraCard.addEventListener('click', expandBoth);
     }
-    
-    // Cleanup
+
     return () => {
       if (cs2Card) {
         cs2Card.removeEventListener('click', expandBoth);
@@ -55,7 +47,6 @@ const Projects = () => {
         <h2>Projects & Publications</h2>
         
         <div className="projects-grid">
-          {/* CS2 Analyzer Project */}
           <div className="project-card project-card-cs2" data-project="cs2analyzer">
             <div className="project-preview">
               <img 
@@ -109,7 +100,6 @@ const Projects = () => {
             </div>
           </div>
 
-          {/* LoRa Mesh Project */}
           <div className="project-card project-card-lora" data-project="lora-mesh">
             <div className="project-preview">
               <img 

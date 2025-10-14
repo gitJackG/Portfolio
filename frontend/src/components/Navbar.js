@@ -5,15 +5,10 @@ const Navbar = () => {
   useEffect(() => {
     let scrollTimeout;
     let isScrolling = false;
-
-    // Initialize jQuery smooth scrolling
     $(document).ready(function() {
-      // Function to update active nav link based on scroll position
       const updateActiveNav = () => {
         const scrollPos = $(window).scrollTop();
         const windowHeight = $(window).height();
-        
-        // Special case for Home section when at the very top
         if (scrollPos < 100) {
           $('.nav-link').removeClass('active');
           $('.nav-link[href="#home"]').addClass('active');
@@ -29,7 +24,7 @@ const Navbar = () => {
           
           if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
             activeSection = section.attr('id');
-            return false; // Break the loop
+            return false;
           }
         });
         
@@ -38,39 +33,26 @@ const Navbar = () => {
           $(`.nav-link[href="#${activeSection}"]`).addClass('active');
         }
       };
-
-      // Smooth scroll to section when nav link is clicked
       $('.nav-link').on('click', function(e) {
         e.preventDefault();
-        
-        // If already scrolling, ignore new clicks
         if (isScrolling) return;
         
         const target = $(this).attr('href');
         if (target) {
           const targetSection = $(target);
           if (targetSection.length) {
-            // Stop any ongoing animations
             $('html, body').stop(true, false);
-            
-            // Add click animation to the nav link
             $(this).addClass('nav-clicked');
             setTimeout(() => {
               $(this).removeClass('nav-clicked');
             }, 300);
-            
-            // Set scrolling flag
             isScrolling = true;
-            
-            // Get scroll position - handle Home section specially
             let scrollPosition;
             if (target === '#home') {
               scrollPosition = 0;
             } else {
               scrollPosition = targetSection.offset().top;
             }
-            
-            // Smooth scroll to section
             $('html, body').animate({
               scrollTop: scrollPosition
             }, {
@@ -78,19 +60,15 @@ const Navbar = () => {
               easing: 'swing',
               complete: function() {
                 isScrolling = false;
-                // Update active nav after scroll completes
                 updateActiveNav();
               }
             });
-            
-            // Update active nav immediately
             $('.nav-link').removeClass('active');
             $(this).addClass('active');
           }
         }
       });
 
-      // Restore hover effects with jQuery (without interfering with scrolling)
       $('.nav-link').hover(
         function() {
           if (!$(this).hasClass('active') && !isScrolling) {
@@ -101,8 +79,6 @@ const Navbar = () => {
           $(this).css('transform', 'translateY(0)');
         }
       );
-
-      // Update active nav on scroll with debounce
       const handleScroll = () => {
         if (!isScrolling) {
           clearTimeout(scrollTimeout);
@@ -110,14 +86,10 @@ const Navbar = () => {
         }
       };
 
-      // Listen for scroll events
       $(window).on('scroll', handleScroll);
-
-      // Initialize active nav on page load
       updateActiveNav();
     });
 
-    // Cleanup function
     return () => {
       clearTimeout(scrollTimeout);
       $('.nav-link').off('click');

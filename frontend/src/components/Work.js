@@ -6,16 +6,12 @@ import '../styles/main.scss';
 
 const Work = () => {
   useEffect(() => {
-    // jQuery animations for work items
     $(document).ready(function() {
-      // Click to expand/collapse
       $('.work-main').on('click', function(e) {
         e.preventDefault();
         
         const workItem = $(this).closest('.work-item');
         const details = workItem.find('.work-details');
-        
-        // Close all other open items first
         $('.work-item').not(workItem).each(function() {
           const otherDetails = $(this).find('.work-details');
           if (otherDetails.css('max-height') !== '0px') {
@@ -29,7 +25,6 @@ const Work = () => {
         });
         
         if (details.css('max-height') === '0px') {
-          // Calculate the exact height needed for the content
           const contentHeight = details.prop('scrollHeight');
           details.css({
             'max-height': contentHeight + 40 + 'px',
@@ -47,8 +42,6 @@ const Work = () => {
         }
       });
     });
-
-    // Cleanup function
     return () => {
       $('.work-main').off('click');
     };

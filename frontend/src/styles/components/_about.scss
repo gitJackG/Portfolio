@@ -49,19 +49,29 @@
 }
 
 .about-image {
+  width: 100%;
+  max-width: 320px;
+  height: 200px;
+  border-radius: $radius-md;
+  border: 2px solid $dark-accent;
+  box-shadow: $shadow-medium;
+  overflow: hidden; // Hide the zoomed parts that overflow
+  
   img {
     width: 100%;
-    max-width: 320px;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
-    object-position: center 30%;
-    border-radius: $radius-md;
-    border: 2px solid $dark-accent;
-    box-shadow: $shadow-medium;
+    object-position: center 15%;
+    transform: scale(2.5) scaleX(-1); // Zoom the image inside the container
+    transition: transform 0.3s ease; // Optional smooth zoom
+  }
+  
+  @media (max-width: $tablet) {
+    max-width: 280px;
+    height: 350px;
     
-    @media (max-width: $tablet) {
-      max-width: 280px;
-      height: 350px;
+    img {
+      transform: scale(2); // Adjust zoom for mobile
     }
   }
 }
@@ -115,7 +125,6 @@
   font-weight: 500;
 }
 
-// Education Section Styles
 .education-section {
   margin-top: 4rem;
   padding-top: 3rem;

@@ -6,17 +6,14 @@ const Footer = () => {
     const $languageSection = $('.language-section');
     const $items = $('.language-item');
     const itemCount = $items.length;
-    const itemWidth = $items.outerWidth(true); // Get actual width including margin
+    const itemWidth = $items.outerWidth(true);
     const $footContainer = $('.foot-container');
-    
-    // Calculate how many clones we need for seamless loop
+
     const containerWidth = $footContainer.width();
     const clonesNeeded = Math.ceil(containerWidth / (itemWidth * itemCount)) + 2;
-    
-    // Clear any existing clones and re-clone
+
     $languageSection.find('.language-item:gt(' + (itemCount - 1) + ')').remove();
     
-    // Clone items for seamless loop
     for (let i = 0; i < clonesNeeded; i++) {
       $languageSection.append($items.clone());
     }
@@ -28,14 +25,13 @@ const Footer = () => {
     
     function updateVisibility() {
       const containerWidth = $footContainer.width();
-      const fadeThreshold = 80; // Increased fade threshold for better effect
+      const fadeThreshold = 80;
       
       $('.language-item').each(function() {
         const $item = $(this);
         const itemOffset = $item.offset().left - $footContainer.offset().left;
         const itemRight = itemOffset + $item.outerWidth();
         
-        // Fade out items near the edges
         let opacity = 1;
         if (itemOffset < fadeThreshold) {
           opacity = Math.max(0.2, itemOffset / fadeThreshold);
@@ -48,7 +44,6 @@ const Footer = () => {
     }
 
     function resetPosition() {
-      // When we've scrolled one full set, reset to beginning seamlessly
       if (Math.abs(position) >= totalWidth) {
         position = 0;
         $languageSection.css('transform', `translateX(${position}px)`);
@@ -57,7 +52,7 @@ const Footer = () => {
 
     function animate() {
       if (!isPaused) {
-        position -= 0.5; // Slightly faster for better loop feel
+        position -= 0.5;
         
         resetPosition();
         
@@ -67,13 +62,10 @@ const Footer = () => {
       animationId = requestAnimationFrame(animate);
     }
     
-    // Initialize visibility
     updateVisibility();
     
-    // Start animation
     animate();
     
-    // Pause on hover
     $languageSection.hover(
       function() {
         isPaused = true;
@@ -83,7 +75,6 @@ const Footer = () => {
       }
     );
     
-    // Update on resize
     let resizeTimeout;
     $(window).on('resize', function() {
       clearTimeout(resizeTimeout);
@@ -92,7 +83,6 @@ const Footer = () => {
       }, 100);
     });
     
-    // Cleanup
     return () => {
       if (animationId) {
         cancelAnimationFrame(animationId);
@@ -106,7 +96,7 @@ const Footer = () => {
     <nav className="footer">
         <div className="foot-container">
             <div className="language-section">
-                {/* HTML */}
+
                 <div className="language-item">
                 <svg width="25" height="25" viewBox="0 0 512 512" className="text-gray-700">
                     <path fill="#E34F26" d="M71,460 L30,0 481,0 440,460 255,512"/>
@@ -117,7 +107,6 @@ const Footer = () => {
                 <span className="language-text">HTML</span>
                 </div>
 
-                {/* CSS */}
                 <div className="language-item">
                 <svg width="25" height="25" viewBox="0 0 512 512" className="text-gray-700">
                     <path fill="#264de4" d="M71.357 460.819L30.272 0h451.456l-41.129 460.746L255.724 512z"/>
@@ -128,7 +117,6 @@ const Footer = () => {
                 <span className="language-text">CSS</span>
                 </div>
 
-                {/* JavaScript */}
                 <div className="language-item">
                 <svg width="25" height="25" viewBox="0 0 630 630" className="text-gray-700">
                     <rect width="630" height="630" fill="#f7df1e"/>
@@ -137,7 +125,6 @@ const Footer = () => {
                 <span className="language-text">JavaScript</span>
                 </div>
 
-                {/* Python */}
                 <div className="language-item">
                 <svg width="25" height="25" viewBox="0 0 128 128" className="text-gray-700">
                     <path fill="#387EB8" d="M55.023-0.077c-25.971,0-26.25,10.081-26.25,12.156c0,3.148,0,12.594,0,12.594h26.75v3.781 c0,0-27.852,0-37.375,0c-7.949,0-17.938,4.833-17.938,26.25c0,19.673,7.792,27.281,15.656,27.281c2.335,0,9.344,0,9.344,0 s0-9.765,0-13.125c0-5.491,2.721-15.656,15.406-15.656c15.91,0,19.971,0,26.531,0c3.902,0,14.906-1.696,14.906-14.406 c0-13.452,0-17.89,0-24.219C82.054,11.426,81.515-0.077,55.023-0.077z M40.273,8.392c2.662,0,4.813,2.15,4.813,4.813 c0,2.661-2.151,4.813-4.813,4.813s-4.813-2.151-4.813-4.813C35.46,10.542,37.611,8.392,40.273,8.392z"/>
@@ -146,7 +133,6 @@ const Footer = () => {
                 <span className="language-text">Python</span>
                 </div>
 
-                {/* C++ */}
                 <div className="language-item">
                 <svg width="25" height="25" viewBox="0 0 306 344.35" className="text-gray-700">
                     <path fill="#00599C" d="M302.107,258.262c2.401-4.159,3.893-8.845,3.893-13.053V99.14c0-4.208-1.49-8.893-3.892-13.052L153,172.175 L302.107,258.262z"/>
@@ -165,7 +151,6 @@ const Footer = () => {
                 <span className="language-text">C++</span>
                 </div>
 
-                {/* Java */}
                 <div className="language-item">
                 <svg width="25" height="25" viewBox="0 0 128 128" className="text-gray-700">
                     <path fill="#5382a1" d="M29.19,95.03c0,0-4.7,2.73,3.34,3.65c9.74,1.11,14.71,0.95,25.44-1.08c0,0,2.82,1.77,6.76,3.3 C40.68,111.22,10.29,100.31,29.19,95.03L29.19,95.03z"/>
@@ -180,7 +165,6 @@ const Footer = () => {
                 <span className="language-text">Java</span>
                 </div>
 
-                {/* SQL */}
                 <div className="language-item">
                 <svg width="25" height="25" viewBox="0 0 175 100" className="text-gray-700">
                     <path d="M-18.458 6.58h191.151v132.49H-18.458V6.58z" fill="none"/>
@@ -192,7 +176,6 @@ const Footer = () => {
                 <span className="language-text">SQL</span>
                 </div>
 
-                {/* React.js */}
                 <div className="language-item">
                 <svg width="25" height="25" fill='none' viewBox="-11 -10.13 22 20.27" className="text-gray-700">
                     <circle r="2" fill="#087ea4"/>
@@ -205,7 +188,6 @@ const Footer = () => {
                 <span className="language-text">React.js</span>
                 </div>
 
-                {/* Node.js */}
                 <div className="language-item">
                 <svg width="25" height="25" fill='none' viewBox="0 0 442.37 270.929" className="text-gray-700">
                     <defs>
@@ -253,7 +235,6 @@ const Footer = () => {
                 <span className="language-text">Node.js</span>
                 </div>
 
-                {/* Grafana */}
                 <div className="language-item">
                 <svg width="25" height="25" fill='none' viewBox="0 0 351 365" className="text-gray-700">
                     <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="175.5" y1="30%" x2="175.5" y2="99%">
@@ -265,7 +246,6 @@ const Footer = () => {
                 <span className="language-text">Grafana</span>
                 </div>
 
-                {/* InfluxDB */}
                 <div className="language-item">
                 <svg width="25" height="25" fill='none' viewBox="0 0 672 250" className="text-gray-700">
                     <g id="influxdb_logo">
@@ -318,7 +298,6 @@ const Footer = () => {
                 <span className="language-text">InfluxDB</span>
                 </div>
 
-                {/* Vite */}
                 <div className="language-item">
                 <svg width="25" height="25" fill='none' viewBox="0 0 410 404" className="text-gray-700">
                     <path d="M399.641 59.5246L215.643 388.545C211.844 395.338 202.084 395.378 198.228 388.618L10.5817 59.5563C6.38087 52.1896 12.6802 43.2665 21.0281 44.7586L205.223 77.6824C206.398 77.8924 207.601 77.8904 208.776 77.6763L389.119 44.8058C397.439 43.2894 403.768 52.1434 399.641 59.5246Z" fill="url(#paint0_linear)"/>
@@ -338,7 +317,6 @@ const Footer = () => {
                 <span className="language-text">Vite</span>
                 </div>
 
-                {/* Docker */}
                 <div className="language-item">
                 <svg width="25" height="25" viewBox="0 0 24 24" className="text-gray-700">
                     <path fill="#0DB7ED" fillRule="evenodd" d="M6.94221099,14.9002344 C6.9980621,14.9002344 7.05128211,14.9107588 7.10043586,14.9297745 C7.04721586,14.9606302 7.01109801,15.018335 7.01109801,15.0842919 C7.01109801,15.1828984 7.09098782,15.2626686 7.18959432,15.2626686 C7.25710599,15.2626686 7.31570779,15.2251754 7.34608506,15.1698027 C7.36743286,15.2214082 7.37939241,15.2780367 7.37939241,15.3374756 C7.37939241,15.578939 7.18361455,15.774657 6.94221099,15.774657 C6.70080744,15.774657 6.50496978,15.578939 6.50496978,15.3374756 C6.50496978,15.0959525 6.70080744,14.9002344 6.94221099,14.9002344 L6.94221099,14.9002344 Z M6.94221099,16.0853662 C6.52978585,16.0853662 6.19420083,15.7499008 6.19420083,15.3374756 C6.19420083,14.9250505 6.52978585,14.5895253 6.94221099,14.5895253 C7.35457634,14.5895253 7.69010156,14.9250505 7.69010156,15.3374756 C7.69010156,15.7499008 7.35457634,16.0853662 6.94221099,16.0853662 L6.94221099,16.0853662 Z M20.3859431,11.1838037 C18.2619865,16.8117894 13.4653093,19.318631 7.81023526,19.318631 C5.13823222,19.318631 3.00656172,18.3995992 1.64323262,16.8672219 L1.65327865,16.8605843 C2.04609012,16.880497 2.39758135,16.8872541 2.75439457,16.8872541 C3.08065114,16.8872541 3.39979178,16.8838457 3.6953721,16.8672219 C3.72108514,16.8657867 3.75325633,16.8621989 3.77878997,16.8605843 C3.77902916,16.8605245 3.86998155,16.8546046 3.82549202,16.853887 C4.57667146,16.8075437 5.15892224,16.7031368 5.70188589,16.5482008 C5.70200548,16.548141 5.70212508,16.548141 5.70224467,16.5480812 C5.80091098,16.5198567 5.89658739,16.4901372 5.98825735,16.4583846 C6.09081051,16.4228049 6.14510687,16.3108635 6.109587,16.2083104 C6.07406714,16.1056974 5.96218553,16.0512815 5.85957258,16.0869807 C5.16992503,16.3259326 4.26010213,16.4574876 3.14505333,16.4821841 L3.14475434,16.4821841 C2.57739321,16.4947416 1.95717085,16.4797922 1.28450587,16.4365584 L1.28444607,16.4365584 C1.14529669,16.2507668 1.01649231,16.0576798 0.89869073,15.8577161 L0.71248051,15.5172277 C0.149903198,14.4112083 -0.0964037696,13.1191582 0.0343141305,11.7160038 L16.3965356,11.7160038 C17.7407294,11.7160038 19.0534696,11.2143604 19.6764427,10.6609919 C18.5601381,9.75332174 18.670764,7.59731356 19.3822377,6.774616 C19.9997093,7.270758 20.9954018,8.31584342 20.824141,9.64622396 C21.6011531,9.255625 22.9506091,9.06259783 24,9.66816973 C23.3411483,10.9541803 21.8929064,11.3383809 20.3859431,11.1838037 L20.3859431,11.1838037 Z M2.25508329,11.3188869 L4.46771995,11.3188869 L4.46771995,9.1061306 L2.25508329,9.1061306 L2.25508329,11.3188869 Z M4.80808879,11.3188869 L7.02096464,11.3188869 L7.02096464,9.1061306 L4.80808879,9.1061306 L4.80808879,11.3188869 Z M4.80808879,8.76576176 L7.02096464,8.76576176 L7.02096464,6.5530653 L4.80808879,6.5530653 L4.80808879,8.76576176 Z M7.36127369,11.3188869 L9.57402994,11.3188869 L9.57402994,9.1061306 L7.36127369,9.1061306 L7.36127369,11.3188869 Z M7.36127369,8.76576176 L9.57402994,8.76576176 L9.57402994,6.5530653 L7.36127369,6.5530653 L7.36127369,8.76576176 Z M9.91433899,11.3188869 L12.1270952,11.3188869 L12.1270952,9.1061306 L9.91433899,9.1061306 L9.91433899,11.3188869 Z M9.91433899,8.76576176 L12.1270952,8.76576176 L12.1270952,6.5530653 L9.91433899,6.5530653 L9.91433899,8.76576176 Z M9.91433899,6.21275626 L12.1270952,6.21275626 L12.1270952,4 L9.91433899,4 L9.91433899,6.21275626 Z M12.4674043,11.3188869 L14.6801605,11.3188869 L14.6801605,9.1061306 L12.4674043,9.1061306 L12.4674043,11.3188869 Z"/>
@@ -346,7 +324,6 @@ const Footer = () => {
                 <span className="language-text">Docker</span>
                 </div>
 
-                {/* NGINX */}
                 <div className="language-item">
                 <svg width="25" height="25" viewBox="0 0 512 512" className="text-gray-700">
                     <path d="M40.066 380.724c2.198 4.396 5.494 7.693 9.89 9.89l193.406 112.088c7.692 4.396 17.582 4.396 25.275 0l193.406-112.088c7.692-4.395 13.187-13.186 13.187-21.978V144.461c0-8.791-4.396-17.582-13.187-21.978L269.736 9.297c-7.693-4.396-17.583-4.396-25.275 0-7.692 4.395-194.505 112.087-194.505 112.087-7.692 4.396-13.187 13.187-13.187 21.978v224.175c0 4.396 1.099 8.792 3.297 13.187" fill="#009639" fillRule="nonzero"/>
@@ -355,7 +332,6 @@ const Footer = () => {
                 <span className="language-text">NGINX</span>
                 </div>
 
-                {/* LaTeX */}
                 <div className="language-item">
                 <svg width="25" height="25" fill='BLACK' viewBox="0 0 1200 500" className="text-gray-700">
                     <path d="m5.46 4.23h-.25c-.1 1.02-.24 2.26-2 2.26h-.81c-.47 0-.49-.07-.49-.4v-5.31c0-.34 0-.48.94-.48h.33v-.3c-.36.03-1.26.03-1.67.03-.39 0-1.17 0-1.51-.03v.3h.23c.77 0 .79.11.79.47v5.25c0 .36-.02.47-.79.47h-.23v.31h5.19z" transform="matrix(45 0 0 45 40 47.65)"/>

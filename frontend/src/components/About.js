@@ -44,8 +44,6 @@ const About = () => {
                   challenges in the tech industry.
                 </p>
               </div>
-              
-              {/* Education Section */}
               <div className="education-section">
                 <h3>Education</h3>
                 <div className="education-cards">

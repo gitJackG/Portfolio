@@ -1,6 +1,5 @@
 @import 'variables';
 
-// Global resets and base styles
 * {
   margin: 0;
   padding: 0;
@@ -28,7 +27,6 @@ body {
   }
 }
 
-// Section base styles
 .section {
   min-height: 100vh;
   display: flex;
@@ -36,8 +34,7 @@ body {
   justify-content: center;
   padding: $section-padding;
   transition: all $transition-fast;
-  
-  // Alternate background for better visual separation
+
   &:nth-child(even) {
     background: linear-gradient(135deg, darken($dark-bg, 2%) 0%, lighten(#2c3e50, 2%) 100%);
   }
@@ -51,7 +48,6 @@ body {
   }
 }
 
-// Container utility
 .container {
   max-width: $desktop;
   width: 100%;
@@ -64,7 +60,6 @@ body {
   }
 }
 
-// Section headings
 .section h2 {
   font-size: 3rem;
   color: $dark-accent;
@@ -78,7 +73,6 @@ body {
   }
 }
 
-// Common text styles
 .section p {
   font-size: 1.2rem;
   color: $dark-secondary;
@@ -89,7 +83,6 @@ body {
   }
 }
 
-// Common card styles
 .card-base {
   background: rgba($dark-accent, 0.05);
   border-radius: $radius-xl;
@@ -102,7 +95,6 @@ body {
   }
 }
 
-// Common tech tag styles
 .tech-tag {
   background: rgba($dark-accent, 0.15);
   color: $dark-accent;

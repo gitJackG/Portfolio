@@ -3,9 +3,7 @@ import '../styles/main.scss';
 
 const Home = () => {
   useEffect(() => {
-    // jQuery animations on component mount
     $(document).ready(function() {
-      // Animate the title with typing effect
       const title = "Jack Griffiths Rico";
       let i = 0;
       
@@ -17,19 +15,10 @@ const Home = () => {
         }
       }
       
-      // Start typing animation after a short delay
       setTimeout(typeWriter, 500);
-      
-      // Animate the subtitle
       $('.title').hide().delay(2500).fadeIn(1000);
-      
-      // Animate the description
       $('.description').hide().delay(3000).fadeIn(1000);
-      
-      // Animate social icons
       $('.social-icons').hide().delay(3500).fadeIn(1000);
-      
-      // Add hover effects with jQuery
       $('h1').hover(
         function() {
           $(this).css('transform', 'scale(1.05)');
@@ -48,7 +37,6 @@ const Home = () => {
         }
       );
 
-      // Add hover effects to social icons
       $('.social-icon').hover(
         function() {
           $(this).css('transform', 'scale(1.2)');
@@ -59,16 +47,13 @@ const Home = () => {
       );
     });
 
-    // Cleanup function
     return () => {
-      // Remove any jQuery event handlers
       $('h1').off('hover');
       $('.title').off('hover');
       $('.social-icon').off('hover');
     };
   }, []);
 
-  // Set dark theme on component mount
   useEffect(() => {
     document.body.className = 'dark-theme';
   }, []);

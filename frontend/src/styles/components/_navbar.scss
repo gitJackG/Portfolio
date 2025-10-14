@@ -145,8 +145,7 @@
     transform: scale(0.95);
     background: rgba($dark-accent, 0.2);
   }
-  
-  // Touch device optimizations
+
   @media (hover: none) {
     &:hover {
       transform: none;
@@ -160,7 +159,6 @@
   }
 }
 
-// Ensure hover doesn't override active state
 .nav-link.active:hover {
   color: $dark-accent !important;
   background: rgba($dark-accent, 0.2) !important;
