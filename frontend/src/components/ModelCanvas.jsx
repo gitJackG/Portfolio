@@ -4,28 +4,15 @@ import React, { useEffect } from 'react'
 import * as THREE from "three";
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader.js"
 import gsap from "gsap"
+import modelRef from "../images/macbook_pro.glb";
 
 export default function page() {
 
 
   useEffect(() => {
-    const menuItems = document.querySelectorAll(".home-item h1");
-    menuItems.forEach((item) => {
-      const hoverTl = gsap.timeline({ paused: true });
-      hoverTl.to(item, {
-        backgroundSize: "100% 100%",
-        duration: 0.5,
-        ease: "power2.out",
-      });
-
-      item.addEventListener("mouseenter", () => hoverTl.play());
-      item.addEventListener("mouseleave", () => hoverTl.reverse());
-    });
-
-
     const config = {
       canvasBg: "#0A1929",
-      modelPath: "/macbook_pro.glb",
+      modelPath: modelRef,
       metalness: 0.55,
       roughness: 0.75,
       baseZoom: 0.35,
@@ -163,7 +150,9 @@ export default function page() {
       scene.add(model);
     });
 
-    const tl = gsap.timeline();
+    const tl = gsap.timeline({
+      onComplete: setupHoverAnimations, // <-- Wait until fade-in done
+    });
 
     tl.to(".home-item h1, .home-item p", {
       opacity: 1,
@@ -172,6 +161,31 @@ export default function page() {
       stagger: 1,
       ease: "power2.out",
     });
+
+    function setupHoverAnimations() {
+      const menuItems = document.querySelectorAll(".home-item h1");
+      menuItems.forEach((item) => {
+        const hoverTl = gsap.timeline({ paused: true });
+        hoverTl.to(item, {
+          backgroundSize: "100% 100%",
+          backgroundPosition: "left",
+          duration: 0.5,
+          ease: "power2.out",
+        });
+
+        item.addEventListener("mouseenter", () => hoverTl.play());
+        item.addEventListener("mouseleave", () => {
+          hoverTl.reverse().eventCallback("onReverseComplete", () => {
+            gsap.set(item, {
+              backgroundSize: "0% 100%",
+              backgroundPosition: "left",
+              backgroundImage: "linear-gradient(#E8F1F8, #E8F1F8), #1E3A5F",
+            });
+          });
+        });
+
+      });
+    }
 
     window.addEventListener("resize", () => {
       camera.aspect = window.innerWidth / window.innerHeight;

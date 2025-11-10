@@ -4,6 +4,9 @@ import React, {useRef} from 'react'
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {useGSAP} from "@gsap/react";
+import cs2Img from "../images/cs2analyzer.png"
+import thesisImg from "../images/thesis.png"
+import portfolioImg from "../images/portfolio.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,7 +15,7 @@ export default function page() {
     {
       index: "01",
       title: "CS2ANALYZER.COM",
-      image: "/cs2analyzer.png",
+      image: cs2Img,
       link: "https://cs2analyzer.com/",
       description: `
 Developed a full-stack web application from scratch to analyze CS2 skin patterns using React.js for the front end and Express.js for the back end.  
@@ -23,7 +26,7 @@ Created a responsive design that works seamlessly across desktop and mobile devi
     {
       index: "02",
       title: "IoT Thesis",
-      image: "/thesis.png",
+      image: thesisImg,
       link: "https://upcommons.upc.edu/entities/publication/381e9bb4-8871-4969-ba90-ecca44a707d8",
       description: `
 Programmed node firmware in C++ for distributed IoT sensor nodes.  
@@ -35,10 +38,10 @@ Research was accepted for publication and presented at SAIA-2025 during IEEE ISC
     {
       index: "03",
       title: "Portfolio",
-      image: "/portfolio.png",
+      image: portfolioImg,
       link: "/",
       description: `
-A dynamic and animated developer portfolio built with Next.js, GSAP, and Tailwind CSS.  
+A dynamic and animated developer portfolio built with React.js, GSAP, and classic CSS.  
 Features smooth scroll-driven animations, reusable components, and responsive design.  
 Showcases modern frontend techniques including React hooks and custom GSAP timelines.`,
     },
@@ -83,9 +86,8 @@ Showcases modern frontend techniques including React hooks and custom GSAP timel
 
 
   return (
-    <>
       <div className="project-container">
-        <section className="project-intro">
+        <section id='projects' className="project-intro">
           <h1>MY PROJECTS</h1>
         </section>
         <div ref={projectContainer} className="project-cards">
@@ -118,6 +120,5 @@ Showcases modern frontend techniques including React hooks and custom GSAP timel
           }
         </div>
       </div>
-    </>
   )
 }

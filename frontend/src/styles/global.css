@@ -63,6 +63,17 @@ nav a{
     transition: transform 0.2s ease, color 0.2s ease;
 }
 
+.nav-content a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.nav-content a.active {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+
 .nav-logo, .nav-contact{
     display: flex;
 }
@@ -165,6 +176,7 @@ canvas{
     background: linear-gradient(#E8F1F8, #E8F1F8) left no-repeat, #1E3A5F;
     background-size: 0 100%;
     background-clip: text;
+    background-position: left;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-font-smoothing: antialiased;
@@ -477,6 +489,7 @@ i{
   will-change: bottom;
   transform: translateZ(0) rotate(20deg);
   transform-origin: bottom center;
+  user-select: none;
 }
 
 .work-overlay::-webkit-scrollbar {
@@ -552,6 +565,7 @@ i{
   height: auto;
   object-fit: contain;
   display: none; 
+  user-select: none;
 }
 
 .work-close-btn {

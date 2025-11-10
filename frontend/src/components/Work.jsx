@@ -1,6 +1,10 @@
 "use client";
 import React, { useEffect } from "react";
 import gsap from "gsap";
+import eyRefImg from "../images/eyref.png"
+import salbcnImg from "../images/salbcnref.png"
+import eyLink from "../images/Jack EY reference - Copy.pdf";
+import salbcnLink from "../images/Jack SALBCN reference - Copy.pdf";
 
 const workData = [
   {
@@ -9,10 +13,10 @@ const workData = [
     itemCategory: "SAP Basis Consultant Intern",
     itemLink: "#",
     itemCopy: "Test text",
-    itemImg: "/portfolio.png",
     itemDate: "11/2023-06/2024",
     itemLocation: "Barcelona, Spain",
-    itemReference: "/eyref.png",
+    itemReference: eyRefImg,
+    itemLink: eyLink,
     itemDescription: "Performed daily system health checks, applied updates, and troubleshooted issues across more than 20 SAP client environments.\n\nAssisted in system upgrades, transport management, and user administration, while collaborating closely with a global team of over 15 consultants.\n\nContributed to improving operational efficiency and system reliability, consistently delivering well-documented and precise solutions praised by senior staff."
   },
   {
@@ -21,10 +25,10 @@ const workData = [
     itemCategory: "International Football Tournament Coordinator",
     itemLink: "#",
     itemCopy: "Test text",
-    itemImg: "/project1.jpg",
     itemDate: "10/2022-06/2025",
     itemLocation: "Barcelona, Spain",
-    itemReference: "/salbcnref.png",
+    itemReference: salbcnImg,
+    itemLink: salbcnLink,
     itemDescription: "Managed the logistics of over 100 international youth football matches, coordinating schedules, pitch readiness, and referee assignments.\n\nOversaw up to 20 teams per tournament day, ensuring seamless communication between coaches, referees, and organizing staff.\n\nRecognized for leadership, problem-solving under pressure, and maintaining high operational standards throughout complex events."
   },
   {
@@ -33,7 +37,6 @@ const workData = [
     itemCategory: "Children's Summer School Monitor",
     itemLink: "#",
     itemCopy: "Test text",
-    itemImg: "/project1.jpg",
     itemDate: "06/2021-08/2021",
     itemLocation: "Barcelona, Spain",
     itemReference: null,
@@ -45,7 +48,6 @@ const workData = [
     itemCategory: "Bachelor's Degree in Computer Science",
     itemLink: "#",
     itemCopy: "Test text",
-    itemImg: "/portfolio.png",
     itemDate: "09/2020-06/2024",
     itemLocation: "Barcelona, Spain",
     itemReference: null,
@@ -57,7 +59,6 @@ const workData = [
     itemCategory: "Secondary & Sixth Form Education",
     itemLink: "#",
     itemCopy: "Test text",
-    itemImg: "/project1.jpg",
     itemDate: "09/2014-06/2020",
     itemLocation: "Barcelona, Spain",
     itemReference: null,
@@ -111,6 +112,7 @@ export default function Page() {
       const itemDate = overlay.querySelector(".work-item-date");
       const itemDescription = overlay.querySelector(".work-item-description");
       const itemReference = overlay.querySelector(".work-item-reference");
+      const itemLink = overlay.querySelector(".work-item-link");
       const overlayContent = overlay.querySelector(".work-overlay-content");
 
       if (itemName) itemName.textContent = dataItem.shortName;
@@ -118,11 +120,10 @@ export default function Page() {
       if (itemLocation) itemLocation.textContent = dataItem.itemLocation;
       if (itemDate) itemDate.textContent = dataItem.itemDate;
       if (itemDescription) itemDescription.textContent = dataItem.itemDescription;
-
-      // Handle reference image visibility and layout mode
       if (itemReference) {
         if (dataItem.itemReference) {
           itemReference.src = dataItem.itemReference;
+          itemLink.href = dataItem.itemLink;
           itemReference.style.display = "block";
           overlayContent.classList.remove("no-ref");
         } else {
@@ -193,7 +194,7 @@ export default function Page() {
               </div>
 
               <div className="work-overlay-right">
-                <img className="work-item-reference" src={null} alt="Reference" />
+                <a href={null} target="_blank" rel="noopener noreferrer" className="work-item-link"><img className="work-item-reference" src={null} alt="Reference" /></a>
               </div>
 
               <div className="work-close-btn">✕</div>

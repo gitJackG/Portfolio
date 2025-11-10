@@ -1,13 +1,12 @@
-"use client"
-import ModelCanvas from "@/app/components/ModelCanvas"
-import TechStack from "@/app/components/TechStack"
-import About from "@/app/components/About"
-import Work from "@/app/components/Work"
-import Projects from "@/app/components/Projects"
-import CV from "@/app/components/CV"
-import Contact from "@/app/components/Contact"
+import ModelCanvas from "./components/ModelCanvas"
+import TechStack from "./components/TechStack"
+import About from "./components/About"
+import Work from "./components/Work"
+import Projects from "./components/Projects"
+import CV from "./components/CV"
 
 import {ReactLenis} from 'lenis/react';
+import "./styles/global.css"
 
 import React, { useEffect } from 'react'
 

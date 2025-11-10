@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
+import me from "../images/me.jpg"
 
 export default function page() {
   const aboutRef = useRef(null);
@@ -137,7 +138,7 @@ export default function page() {
             </p>
           </div>
           <div className="about-img-container">
-            <img src="/me.jpg" alt="" className="about-image" />
+            <img src={me} alt="" className="about-image" />
           </div>
         </div>
       </div>
