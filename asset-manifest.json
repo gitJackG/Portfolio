@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.340796ed.css",
+    "main.js": "/Portfolio/static/js/main.7d3f0fbe.js",
+    "static/media/macbook_pro.glb": "/Portfolio/static/media/macbook_pro.34f9569ce1b3852ac406.glb",
+    "static/media/3djs.png": "/Portfolio/static/media/3djs.de737969ad89236b1288.png",
+    "static/media/me.jpg": "/Portfolio/static/media/me.4d773a95df88d42ee45a.jpg",
+    "static/media/portfolio.png": "/Portfolio/static/media/portfolio.29a263e2c5155b0659f4.png",
+    "static/media/cs2analyzer.png": "/Portfolio/static/media/cs2analyzer.f5bb2cfea83c74ddeb5d.png",
+    "static/media/cv.png": "/Portfolio/static/media/cv.1b0e7eea4e7d5c6a991a.png",
+    "static/media/3dc.png": "/Portfolio/static/media/3dc.a7b7f4f7cc6afd45cd69.png",
+    "static/media/3dreact.png": "/Portfolio/static/media/3dreact.26a94d6a11261a3115b1.png",
+    "static/media/3dmongo.png": "/Portfolio/static/media/3dmongo.82a700d00eb6023332fe.png",
+    "static/media/3dnodejs.png": "/Portfolio/static/media/3dnodejs.0b4fe8aff652088e0588.png",
+    "static/media/3dts.png": "/Portfolio/static/media/3dts.21c700e33ef480d862f5.png",
+    "static/media/3dsql.png": "/Portfolio/static/media/3dsql.cf69ea258971186b4800.png",
+    "static/media/3djava.png": "/Portfolio/static/media/3djava.bc8a97e6b177e2bce319.png",
+    "static/media/eyref.png": "/Portfolio/static/media/eyref.a30430cb9b77b9143a95.png",
+    "static/media/3dgit.png": "/Portfolio/static/media/3dgit.78c3dd564f7973f6cae4.png",
+    "static/media/3dhtml.png": "/Portfolio/static/media/3dhtml.372fbd230ec0f7a90397.png",
+    "static/media/thesis.png": "/Portfolio/static/media/thesis.9adb2d9892eae076e8b4.png",
+    "static/media/3dcc.png": "/Portfolio/static/media/3dcc.934cb435b0b7f8f7fda2.png",
+    "static/media/Jack_Resume_FullStack - Copy.pdf": "/Portfolio/static/media/Jack_Resume_FullStack - Copy.ea07938865ec307a081c.pdf",
+    "static/media/3dpython.png": "/Portfolio/static/media/3dpython.72aaf5a89aff5b996256.png",
+    "static/media/3dcss.png": "/Portfolio/static/media/3dcss.82ec77d3bc31d53990f7.png",
+    "static/media/Jack EY reference - Copy.pdf": "/Portfolio/static/media/Jack EY reference - Copy.db109c87f564e6469d62.pdf",
+    "static/media/salbcnref.png": "/Portfolio/static/media/salbcnref.848cacd6095495241ed2.png",
+    "static/media/3dlinux.png": "/Portfolio/static/media/3dlinux.92db49fe7397cd1767e4.png",
+    "static/media/3ddocker.png": "/Portfolio/static/media/3ddocker.8ab9c1399dbcfc426b1c.png",
+    "static/media/Jack SALBCN reference - Copy.pdf": "/Portfolio/static/media/Jack SALBCN reference - Copy.ff03390199e327661d58.pdf",
+    "index.html": "/Portfolio/index.html",
+    "main.340796ed.css.map": "/Portfolio/static/css/main.340796ed.css.map",
+    "main.7d3f0fbe.js.map": "/Portfolio/static/js/main.7d3f0fbe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.340796ed.css",
+    "static/js/main.7d3f0fbe.js"
+  ]
+}
