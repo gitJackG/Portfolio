@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.6ded0e4a.css",
-    "main.js": "/static/js/main.b06b2d1c.js",
+    "main.css": "/static/css/main.340796ed.css",
+    "main.js": "/static/js/main.a218677e.js",
     "static/media/macbook_pro.glb": "/static/media/macbook_pro.34f9569ce1b3852ac406.glb",
     "static/media/3djs.png": "/static/media/3djs.de737969ad89236b1288.png",
     "static/media/me.jpg": "/static/media/me.4d773a95df88d42ee45a.jpg",
@@ -29,11 +29,11 @@
     "static/media/3ddocker.png": "/static/media/3ddocker.8ab9c1399dbcfc426b1c.png",
     "static/media/Jack SALBCN reference - Copy.pdf": "/static/media/Jack SALBCN reference - Copy.ff03390199e327661d58.pdf",
     "index.html": "/index.html",
-    "main.6ded0e4a.css.map": "/static/css/main.6ded0e4a.css.map",
-    "main.b06b2d1c.js.map": "/static/js/main.b06b2d1c.js.map"
+    "main.340796ed.css.map": "/static/css/main.340796ed.css.map",
+    "main.a218677e.js.map": "/static/js/main.a218677e.js.map"
   },
   "entrypoints": [
-    "static/css/main.6ded0e4a.css",
-    "static/js/main.b06b2d1c.js"
+    "static/css/main.340796ed.css",
+    "static/js/main.a218677e.js"
   ]
 }
