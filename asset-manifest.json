@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.340796ed.css",
-    "main.js": "/static/js/main.a218677e.js",
+    "main.css": "/static/css/main.20957595.css",
+    "main.js": "/static/js/main.7193a7c7.js",
     "static/media/macbook_pro.glb": "/static/media/macbook_pro.34f9569ce1b3852ac406.glb",
     "static/media/3djs.png": "/static/media/3djs.de737969ad89236b1288.png",
     "static/media/me.jpg": "/static/media/me.4d773a95df88d42ee45a.jpg",
+    "static/media/krish.png": "/static/media/krish.78d23a12aaec28b4b258.png",
     "static/media/portfolio.png": "/static/media/portfolio.29a263e2c5155b0659f4.png",
     "static/media/cs2analyzer.png": "/static/media/cs2analyzer.f5bb2cfea83c74ddeb5d.png",
     "static/media/cv.png": "/static/media/cv.1b0e7eea4e7d5c6a991a.png",
@@ -28,12 +29,13 @@
     "static/media/3dlinux.png": "/static/media/3dlinux.92db49fe7397cd1767e4.png",
     "static/media/3ddocker.png": "/static/media/3ddocker.8ab9c1399dbcfc426b1c.png",
     "static/media/Jack SALBCN reference - Copy.pdf": "/static/media/Jack SALBCN reference - Copy.ff03390199e327661d58.pdf",
+    "static/media/auth.png": "/static/media/auth.b758382fd9d47e42f637.png",
     "index.html": "/index.html",
-    "main.340796ed.css.map": "/static/css/main.340796ed.css.map",
-    "main.a218677e.js.map": "/static/js/main.a218677e.js.map"
+    "main.20957595.css.map": "/static/css/main.20957595.css.map",
+    "main.7193a7c7.js.map": "/static/js/main.7193a7c7.js.map"
   },
   "entrypoints": [
-    "static/css/main.340796ed.css",
-    "static/js/main.a218677e.js"
+    "static/css/main.20957595.css",
+    "static/js/main.7193a7c7.js"
   ]
 }
